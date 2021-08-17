@@ -1,0 +1,1 @@
+# smart-collection-score-client-java
