@@ -9,17 +9,16 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(CatalogoErrorCode.Adapter.class)
 public enum CatalogoErrorCode {
   
-  C1("C1"),
+  E1("E1"),
+  E2("E2"),
+  E3("E3"),
+  E4("E4"),
+  E5("E5"),
+  E6("E6"),
+  E7("E7"),
+  E8("E8"),
+  E9("E9");
   
-  C2("C2"),
-  
-  C3("C3"),
-  
-  C4("C4"),
-  
-  C5("C5"),
-  
-  C6("C6");
   private String value;
   CatalogoErrorCode(String value) {
     this.value = value;
