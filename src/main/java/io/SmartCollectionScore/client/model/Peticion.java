@@ -17,10 +17,9 @@ public class Peticion {
   private CatalogoTipoCuenta tipoCuenta = null;
   @SerializedName("tipoFrecuencia")
   private CatalogoTipoFrecuencia tipoFrecuencia = null;
-  @SerializedName("ventanaDeTiempo")
-  private CatalogoVentanaTiempo ventanaDeTiempo = null;
   @SerializedName("fronteraDeImpago")
-  private CatalogoFronteraDeImpago fronteraDeImpago = null;
+  private CatalogoVentanaTiempo fronteraDeImpago = null;
+  
   @SerializedName("periodosVencidos")
   private CatalogoPeriodosVencidos periodosVencidos = null;
   @SerializedName("saldoVencido")
@@ -87,28 +86,17 @@ public class Peticion {
   public void setTipoFrecuencia(CatalogoTipoFrecuencia tipoFrecuencia) {
     this.tipoFrecuencia = tipoFrecuencia;
   }
-  public Peticion ventanaDeTiempo(CatalogoVentanaTiempo ventanaDeTiempo) {
-    this.ventanaDeTiempo = ventanaDeTiempo;
-    return this;
-  }
-   
-  
-  public CatalogoVentanaTiempo getVentanaDeTiempo() {
-    return ventanaDeTiempo;
-  }
-  public void setVentanaDeTiempo(CatalogoVentanaTiempo ventanaDeTiempo) {
-    this.ventanaDeTiempo = ventanaDeTiempo;
-  }
-  public Peticion fronteraDeImpago(CatalogoFronteraDeImpago fronteraDeImpago) {
+
+  public Peticion fronteraDeImpago(CatalogoVentanaTiempo fronteraDeImpago) {
     this.fronteraDeImpago = fronteraDeImpago;
     return this;
   }
    
   
-  public CatalogoFronteraDeImpago getFronteraDeImpago() {
+  public CatalogoVentanaTiempo getFronteraDeImpago() {
     return fronteraDeImpago;
   }
-  public void setFronteraDeImpago(CatalogoFronteraDeImpago fronteraDeImpago) {
+  public void setFronteraDeImpago(CatalogoVentanaTiempo fronteraDeImpago) {
     this.fronteraDeImpago = fronteraDeImpago;
   }
   public Peticion periodosVencidos(CatalogoPeriodosVencidos periodosVencidos) {
@@ -161,7 +149,6 @@ public class Peticion {
         Objects.equals(this.tipoContrato, peticion.tipoContrato) &&
         Objects.equals(this.tipoCuenta, peticion.tipoCuenta) &&
         Objects.equals(this.tipoFrecuencia, peticion.tipoFrecuencia) &&
-        Objects.equals(this.ventanaDeTiempo, peticion.ventanaDeTiempo) &&
         Objects.equals(this.fronteraDeImpago, peticion.fronteraDeImpago) &&
         Objects.equals(this.periodosVencidos, peticion.periodosVencidos) &&
         Objects.equals(this.saldoVencido, peticion.saldoVencido) &&
@@ -169,7 +156,7 @@ public class Peticion {
   }
   @Override
   public int hashCode() {
-    return Objects.hash(folioOtorgante, numeroCuenta, tipoContrato, tipoCuenta, tipoFrecuencia, ventanaDeTiempo, fronteraDeImpago, periodosVencidos, saldoVencido, saldoActual);
+    return Objects.hash(folioOtorgante, numeroCuenta, tipoContrato, tipoCuenta, tipoFrecuencia,  fronteraDeImpago, periodosVencidos, saldoVencido, saldoActual);
   }
   @Override
   public String toString() {
@@ -181,7 +168,6 @@ public class Peticion {
     sb.append("    tipoContrato: ").append(toIndentedString(tipoContrato)).append("\n");
     sb.append("    tipoCuenta: ").append(toIndentedString(tipoCuenta)).append("\n");
     sb.append("    tipoFrecuencia: ").append(toIndentedString(tipoFrecuencia)).append("\n");
-    sb.append("    ventanaDeTiempo: ").append(toIndentedString(ventanaDeTiempo)).append("\n");
     sb.append("    fronteraDeImpago: ").append(toIndentedString(fronteraDeImpago)).append("\n");
     sb.append("    periodosVencidos: ").append(toIndentedString(periodosVencidos)).append("\n");
     sb.append("    saldoVencido: ").append(toIndentedString(saldoVencido)).append("\n");
