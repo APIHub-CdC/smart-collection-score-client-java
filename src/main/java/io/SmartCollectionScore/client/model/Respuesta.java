@@ -14,10 +14,8 @@ public class Respuesta {
   private String folioOtorgante = null;
   @SerializedName("score")
   private BigDecimal score = null;
-  @SerializedName("ventanaDeTiempo")
-  private CatalogoVentanaTiempo ventanaDeTiempo = null;
   @SerializedName("fronteraDeImpago")
-  private CatalogoFronteraDeImpago fronteraDeImpago = null;
+  private CatalogoVentanaTiempo fronteraDeImpago = null;
   @SerializedName("errorCode")
   private CatalogoErrorCode errorCode = null;
   @SerializedName("fechaDeCalculo")
@@ -58,28 +56,17 @@ public class Respuesta {
   public void setScore(BigDecimal score) {
     this.score = score;
   }
-  public Respuesta ventanaDeTiempo(CatalogoVentanaTiempo ventanaDeTiempo) {
-    this.ventanaDeTiempo = ventanaDeTiempo;
-    return this;
-  }
-   
-  
-  public CatalogoVentanaTiempo getVentanaDeTiempo() {
-    return ventanaDeTiempo;
-  }
-  public void setVentanaDeTiempo(CatalogoVentanaTiempo ventanaDeTiempo) {
-    this.ventanaDeTiempo = ventanaDeTiempo;
-  }
-  public Respuesta fronteraDeImpago(CatalogoFronteraDeImpago fronteraDeImpago) {
+
+  public Respuesta fronteraDeImpago(CatalogoVentanaTiempo fronteraDeImpago) {
     this.fronteraDeImpago = fronteraDeImpago;
     return this;
   }
    
   
-  public CatalogoFronteraDeImpago getFronteraDeImpago() {
+  public CatalogoVentanaTiempo getFronteraDeImpago() {
     return fronteraDeImpago;
   }
-  public void setFronteraDeImpago(CatalogoFronteraDeImpago fronteraDeImpago) {
+  public void setFronteraDeImpago(CatalogoVentanaTiempo fronteraDeImpago) {
     this.fronteraDeImpago = fronteraDeImpago;
   }
   public Respuesta errorCode(CatalogoErrorCode errorCode) {
@@ -118,14 +105,13 @@ public class Respuesta {
     return Objects.equals(this.folioConsulta, respuesta.folioConsulta) &&
         Objects.equals(this.folioOtorgante, respuesta.folioOtorgante) &&
         Objects.equals(this.score, respuesta.score) &&
-        Objects.equals(this.ventanaDeTiempo, respuesta.ventanaDeTiempo) &&
         Objects.equals(this.fronteraDeImpago, respuesta.fronteraDeImpago) &&
         Objects.equals(this.errorCode, respuesta.errorCode) &&
         Objects.equals(this.fechaDeCalculo, respuesta.fechaDeCalculo);
   }
   @Override
   public int hashCode() {
-    return Objects.hash(folioConsulta, folioOtorgante, score, ventanaDeTiempo, fronteraDeImpago, errorCode, fechaDeCalculo);
+    return Objects.hash(folioConsulta, folioOtorgante, score,  fronteraDeImpago, errorCode, fechaDeCalculo);
   }
   @Override
   public String toString() {
@@ -135,7 +121,6 @@ public class Respuesta {
     sb.append("    folioConsulta: ").append(toIndentedString(folioConsulta)).append("\n");
     sb.append("    folioOtorgante: ").append(toIndentedString(folioOtorgante)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
-    sb.append("    ventanaDeTiempo: ").append(toIndentedString(ventanaDeTiempo)).append("\n");
     sb.append("    fronteraDeImpago: ").append(toIndentedString(fronteraDeImpago)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    fechaDeCalculo: ").append(toIndentedString(fechaDeCalculo)).append("\n");
